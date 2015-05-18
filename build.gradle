@@ -1,0 +1,45 @@
+allprojects {
+
+
+    group = 'com.bootnetflix'
+    version = '0.0.1-SNAPSHOT'
+}
+
+subprojects {
+
+    apply plugin: 'java'
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    project.ext {
+        springBootVersion = '1.2.3.RELEASE'
+    }
+
+    repositories {
+        mavenCentral()
+        maven { url "https://repo.spring.io/libs-snapshot-local" }
+        maven { url "https://repo.spring.io/libs-milestone-local" }
+        maven { url "https://repo.spring.io/libs-release-local" }
+
+    }
+
+    dependencies {
+        compile 'org.springframework.cloud:spring-cloud-starter-eureka:1.0.2.RELEASE'
+        compile 'org.springframework.cloud:spring-cloud-starter-eureka-server:1.0.2.RELEASE'
+
+        compile("org.springframework.boot:spring-boot-starter-web")
+        testCompile("org.springframework.boot:spring-boot-starter-test:$project.ext.springBootVersion")
+        compile("org.springframework.boot:spring-boot-starter-actuator")
+        compile ('javax.inject:javax.inject:1')
+        compile ('org.springframework.cloud:spring-cloud-starter-hystrix-dashboard:1.0.1.RELEASE')
+        compile('org.springframework.cloud:spring-cloud-starter-hystrix:1.0.1.RELEASE')
+        compile('com.goebl:david-webb:1.1.0')
+
+
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.1'
+}

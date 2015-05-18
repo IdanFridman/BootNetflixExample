@@ -1,0 +1,8 @@
+rootProject.name = 'BootNetflixExample'
+
+include 'eureka-service'
+
+include 'eureka-client'
+
+include 'hystrix-client'
+

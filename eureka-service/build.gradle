@@ -1,0 +1,53 @@
+buildscript {
+    repositories {
+        maven { url "http://repo.spring.io/libs-release" }
+        mavenLocal()
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:$project.ext.springBootVersion")
+        classpath ("io.spring.gradle:dependency-management-plugin:0.4.0.RELEASE")
+
+
+    }
+}
+
+
+apply plugin: "io.spring.dependency-management"
+apply plugin: 'spring-boot'
+apply plugin: 'java'
+apply plugin: 'idea'
+
+dependencyManagement {
+    imports {
+        mavenBom 'org.springframework.cloud:spring-cloud-starter-parent:1.0.0.RELEASE'
+    }
+}
+
+
+springBoot {
+    requiresUnpack = ['com.netflix.eureka:eureka-core','com.netflix.eureka:eureka-com.bootnetflix.eureka.client']
+}
+
+jar {
+    baseName = 'eureka-service'
+}
+
+configurations {
+    providedRuntime
+}
+
+description = 'Eureka Service'
+
+dependencies {
+
+
+
+}
+
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.11'
+}
+
+
