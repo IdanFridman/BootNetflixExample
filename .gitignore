@@ -19,6 +19,6 @@ out
 .idea
 .gradle
 .iml
-eureka-client/eureka-client.iml
+core/flight-booking-service/eureka-client.iml
 eureka-service/eureka-service.iml
 hystrix-client/hystrix-client.iml

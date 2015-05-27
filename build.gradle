@@ -1,3 +1,4 @@
+/*
 allprojects {
 
 
@@ -36,6 +37,10 @@ subprojects {
         compile('org.springframework.cloud:spring-cloud-starter-hystrix:1.0.1.RELEASE')
         compile('com.goebl:david-webb:1.1.0')
 
+        compile('org.springframework.cloud:spring-cloud-starter-turbine-amqp:1.0.0.RELEASE')
+        compile("org.springframework.cloud:spring-cloud-starter-bus-amqp:1.0.0.RELEASE")
+        compile("org.springframework.cloud:spring-cloud-netflix-hystrix-amqp:1.0.0.RELEASE")
+
 
     }
 }
@@ -43,3 +48,4 @@ subprojects {
 task wrapper(type: Wrapper) {
     gradleVersion = '2.1'
 }
+*/

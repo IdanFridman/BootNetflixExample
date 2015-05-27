@@ -1,8 +1,17 @@
 rootProject.name = 'BootNetflixExample'
 
-include 'eureka-service'
+include 'core/flight-booking-service'
 
-include 'eureka-client'
+include 'core/baggage-service'
 
-include 'hystrix-client'
+include 'core/coupon-service'
+
+include 'core/flight-integration-service'
+
+include 'support/hystrix-dashboard'
+
+include 'support/eureka-service'
+
+include 'support/turbine'
+
 
