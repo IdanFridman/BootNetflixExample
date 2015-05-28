@@ -1,4 +1,4 @@
-package com.bootnetflix.eureka.client.services;
+package com.bootnetflix.flight_booking_service.services;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,6 +15,7 @@ public class FlightBookingService {
     @RequestMapping("/flights/list")
     public List getAvailableFlightsList()
     {
+        System.out.println("FlightBookingService, getAvailableFlightsList, returning Canada,USA,Israel ");
         return Arrays.asList("Canada,USA,Israel");
     }
 

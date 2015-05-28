@@ -13,11 +13,11 @@ import org.springframework.cloud.netflix.turbine.amqp.EnableTurbineAmqp;
 @SpringBootApplication
 @EnableTurbineAmqp
 @EnableDiscoveryClient
-public class TurbineApplication  {
+public class TurbineApplication {
 
     public static void main(String[] args) {
-        new SpringApplicationBuilder(TurbineApplication.class).run(args);    }
-
+        new SpringApplicationBuilder(TurbineApplication.class).run(args);
+    }
 
 
 }

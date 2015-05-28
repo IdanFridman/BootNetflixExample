@@ -4,6 +4,7 @@ package com.bootnetflix.flight_booking_service.main;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
@@ -14,6 +15,7 @@ import org.springframework.context.annotation.Configuration;
 @ComponentScan("com.bootnetflix")
 @EnableAutoConfiguration
 @EnableCircuitBreaker
+@EnableDiscoveryClient
 public class FlightBookingApplication {
 
 

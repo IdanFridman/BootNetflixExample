@@ -1,6 +1,7 @@
 package com.bootnetflix.flight_integration_service.service;
 
 import com.bootnetflix.flight_integration_service.registry.RegistryService;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +26,7 @@ public class FlightIntegrationService {
     RegistryService registryService;
 
 
-  //  @HystrixCommand(fallbackMethod = "defaultFlightList")
+    @HystrixCommand(fallbackMethod = "defaultFlightList")
     public String getFlightList() {
         URI uri = registryService.getServiceUrl("flight-booking-service", "http://localhost:8081/flight-booking-service");
         String url = uri.toString() + "/flights/list";
