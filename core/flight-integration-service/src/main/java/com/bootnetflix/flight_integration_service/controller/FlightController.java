@@ -19,4 +19,10 @@ public class FlightController {
         String result = flightIntegrationService.getFlightList();
         return result;
     }
+
+    @RequestMapping("/flights/coupon")
+    public String getCoupon() {
+        String result = flightIntegrationService.getCoupon();
+        return result;
+    }
 }

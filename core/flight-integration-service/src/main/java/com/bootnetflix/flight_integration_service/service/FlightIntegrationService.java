@@ -45,4 +45,17 @@ public class FlightIntegrationService {
     }
 
 
+    public String getCoupon()
+    {
+        URI uri = registryService.getServiceUrl("coupon-service", "http://localhost:8081/coupon-service");
+        String url = uri.toString() + "/coupon/generate";
+        LOG.debug("GetProduct from URL: {}", url);
+
+        ResponseEntity<String> resultStr = restTemplate.getForEntity(url, String.class);
+        LOG.debug("GetProduct http-status: {}", resultStr.getStatusCode());
+        LOG.debug("GetProduct body: {}", resultStr.getBody());return resultStr.getBody();
+
+    }
+
+
 }

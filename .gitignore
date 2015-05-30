@@ -23,3 +23,4 @@ core/flight-booking-service/eureka-client.iml
 eureka-service/eureka-service.iml
 hystrix-client/hystrix-client.iml
 support/hystrix-dashboard/support_hystrix-dashboard.iml
+core/coupon-service/core_coupon-service.iml

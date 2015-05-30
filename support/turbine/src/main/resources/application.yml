@@ -25,14 +25,22 @@ eureka:
   instance:
     leaseRenewalIntervalInSeconds: 10
   client:
-    serviceUrl:
-      defaultZone: ${vcap.services.${PREFIX:}eureka.credentials.uri:http://user:password@localhost:8761}/eureka/
+      serviceUrl:
+        defaultZone: http://localhost:8761/eureka/
+
+
 
 #turbine:
-#  appConfig: customers,stores,productapi
+ # aggregator:
+  #  clusterConfig: FLIGHT-INTEGRATION-SERVICE,COUPON-SERVICE
+  #appConfig: flight-integration-service,coupon-service
+
+
+#turbine:
 #  clusterNameExpression: 'default'
+ # appConfig: flight-integration-service,coupon-service
 
-#turbine:
-#  aggregator:
-#    clusterConfig: CUSTOMERS
-#  appConfig: customers
+turbine:
+  appConfig: coupon-service,flight-integration-service
+  clusterNameExpression: new String('default')
+

@@ -1,4 +1,4 @@
-package com.bootnetflix.flight_integration_service.coupon_service.services;
+package com.bootnetflix.coupon_service;
 
 import javax.inject.Named;
 
