@@ -1,0 +1,41 @@
+buildscript {
+    ext {
+        springBootVersion = '1.2.2.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'spring-boot'
+
+jar {
+    baseName = 'routing-service'
+    version = '0.0.1-SNAPSHOT'
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.boot:spring-boot-starter-undertow")
+    compile("org.springframework.boot:spring-boot-starter-actuator")
+    compile('org.springframework.cloud:spring-cloud-starter-turbine:1.0.2.RELEASE')
+    compile("org.springframework.cloud:spring-cloud-starter-eureka:1.0.0.RELEASE")
+    compile('org.springframework.cloud:spring-cloud-starter-zuul:1.0.0.RELEASE')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+
+
+}
+

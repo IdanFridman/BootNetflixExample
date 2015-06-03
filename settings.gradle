@@ -14,4 +14,6 @@ include 'support/eureka-service'
 
 include 'support/turbine'
 
+include 'support/routing-service'
+
 
