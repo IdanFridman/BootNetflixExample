@@ -42,5 +42,7 @@ eureka:
 
 turbine:
   appConfig: coupon-service,flight-integration-service
-  clusterNameExpression: new String('default')
+  clusterNameExpression: 'default'
+
+
 

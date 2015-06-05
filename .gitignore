@@ -18,7 +18,7 @@ hs_err_pid*
 out
 .idea
 .gradle
-.iml
+*.iml
 core/flight-booking-service/eureka-client.iml
 eureka-service/eureka-service.iml
 hystrix-client/hystrix-client.iml
