@@ -1,9 +1,11 @@
 package com.bootnetflix.flight_integration_service.controller;
 
+import com.bootnetflix.flight_integration_service.service.FlightDetails;
 import com.bootnetflix.flight_integration_service.service.FlightIntegrationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.context.request.async.DeferredResult;
 
 /**
  * Created by Ext_IdanF on 27/05/2015.
@@ -24,5 +26,12 @@ public class FlightController {
     public String getCoupon() {
         String result = flightIntegrationService.getCoupon();
         return result;
+    }
+
+    @RequestMapping("/flights/all_details")
+    public String getAllFlightDetails() {
+        DeferredResult<FlightDetails> result = flightIntegrationService.getAllFlightDetails();
+        FlightDetails flightDetails=(FlightDetails)result.getResult();
+        return flightDetails.toString();
     }
 }
