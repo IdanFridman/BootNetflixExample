@@ -29,9 +29,8 @@ public class FlightController {
     }
 
     @RequestMapping("/flights/all_details")
-    public String getAllFlightDetails() {
-        DeferredResult<FlightDetails> result = flightIntegrationService.getAllFlightDetails();
-        FlightDetails flightDetails=(FlightDetails)result.getResult();
-        return flightDetails.toString();
+    public  DeferredResult<FlightDetails>  getAllFlightDetails() {
+        DeferredResult<FlightDetails> deferredResult = flightIntegrationService.getAllFlightDetails();
+        return deferredResult;
     }
 }
