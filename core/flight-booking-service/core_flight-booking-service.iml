@@ -45,7 +45,6 @@
     <orderEntry type="library" exported="" name="Gradle: com.netflix.netflix-commons:netflix-commons-util:0.1.1" level="project" />
     <orderEntry type="library" exported="" name="Gradle: com.netflix.netflix-commons:netflix-statistics:0.1.1" level="project" />
     <orderEntry type="library" exported="" name="Gradle: org.jboss.spec.javax.servlet:jboss-servlet-api_3.1_spec:1.0.0.Final" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.google.code.findbugs:jsr305:2.0.0" level="project" />
     <orderEntry type="library" exported="" name="Gradle: javax.validation:validation-api:1.1.0.Final" level="project" />
     <orderEntry type="library" exported="" name="Gradle: com.fasterxml:classmate:1.0.0" level="project" />
     <orderEntry type="library" exported="" name="Gradle: org.yaml:snakeyaml:1.14" level="project" />
@@ -71,7 +70,6 @@
     <orderEntry type="library" exported="" name="Gradle: org.sonatype.sisu.inject:cglib:2.2.1-v20090111" level="project" />
     <orderEntry type="library" exported="" name="Gradle: org.antlr:stringtemplate:3.2.1" level="project" />
     <orderEntry type="library" exported="" name="Gradle: antlr:antlr:2.7.7" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.google.guava:guava:15.0" level="project" />
     <orderEntry type="library" exported="" name="Gradle: com.netflix.servo:servo-core:0.7.5" level="project" />
     <orderEntry type="library" exported="" name="Gradle: commons-logging:commons-logging:1.2" level="project" />
     <orderEntry type="library" exported="" name="Gradle: commons-codec:commons-codec:1.6" level="project" />
@@ -82,7 +80,6 @@
     <orderEntry type="library" scope="TEST" name="Gradle: org.objenesis:objenesis:2.1" level="project" />
     <orderEntry type="library" exported="" name="Gradle: org.springframework.boot:spring-boot-starter-web:1.2.2.RELEASE" level="project" />
     <orderEntry type="library" exported="" name="Gradle: org.springframework.boot:spring-boot-starter-actuator:1.2.2.RELEASE" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: org.springframework.cloud:spring-cloud-starter-hystrix:1.0.0.RELEASE" level="project" />
     <orderEntry type="library" exported="" name="Gradle: org.springframework.cloud:spring-cloud-starter-eureka:1.0.0.RELEASE" level="project" />
     <orderEntry type="library" exported="" name="Gradle: org.springframework.boot:spring-boot-starter:1.2.2.RELEASE" level="project" />
     <orderEntry type="library" exported="" name="Gradle: org.springframework:spring-core:4.1.5.RELEASE" level="project" />
@@ -91,9 +88,6 @@
     <orderEntry type="library" exported="" name="Gradle: org.springframework.boot:spring-boot-actuator:1.2.2.RELEASE" level="project" />
     <orderEntry type="library" exported="" name="Gradle: org.springframework.cloud:spring-cloud-starter:1.0.0.RELEASE" level="project" />
     <orderEntry type="library" exported="" name="Gradle: org.springframework.cloud:spring-cloud-netflix-core:1.0.0.RELEASE" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.netflix.hystrix:hystrix-core:1.4.0-RC6" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.netflix.hystrix:hystrix-metrics-event-stream:1.4.0-RC6" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.netflix.hystrix:hystrix-javanica:1.4.0-RC6" level="project" />
     <orderEntry type="library" exported="" name="Gradle: com.netflix.ribbon:ribbon:2.0-RC13" level="project" />
     <orderEntry type="library" exported="" name="Gradle: com.netflix.ribbon:ribbon-core:2.0-RC13" level="project" />
     <orderEntry type="library" exported="" name="Gradle: com.netflix.ribbon:ribbon-eureka:2.0-RC13" level="project" />
@@ -106,10 +100,6 @@
     <orderEntry type="library" exported="" name="Gradle: org.springframework:spring-context:4.1.5.RELEASE" level="project" />
     <orderEntry type="library" exported="" name="Gradle: org.springframework:spring-expression:4.1.5.RELEASE" level="project" />
     <orderEntry type="library" exported="" name="Gradle: org.springframework.cloud:spring-cloud-commons:1.0.0.RELEASE" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: io.reactivex:rxjava:1.0.4" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: org.aspectj:aspectjweaver:1.7.4" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: org.aspectj:aspectjrt:1.7.4" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: org.apache.commons:commons-lang3:3.1" level="project" />
     <orderEntry type="library" exported="" name="Gradle: com.sun.jersey:jersey-core:1.11" level="project" />
     <orderEntry type="library" exported="" name="Gradle: org.apache.httpcomponents:httpclient:4.2.1" level="project" />
     <orderEntry type="library" exported="" name="Gradle: com.netflix.ribbon:ribbon-httpclient:2.0-RC9" level="project" />
@@ -138,5 +128,14 @@
     <orderEntry type="library" exported="" name="Gradle: org.apache.httpcomponents:httpcore:4.2.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.springframework.boot:spring-boot-starter-test:1.2.2.RELEASE" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.springframework:spring-test:4.1.5.RELEASE" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.springframework.boot:spring-boot-starter-tomcat:1.2.2.RELEASE" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.apache.tomcat.embed:tomcat-embed-core:8.0.20" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.apache.tomcat.embed:tomcat-embed-el:8.0.20" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.apache.tomcat.embed:tomcat-embed-logging-juli:8.0.20" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.apache.tomcat.embed:tomcat-embed-websocket:8.0.20" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.google.guava:guava:14.0.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.netflix.hystrix:hystrix-core:1.4.0-RC5" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.netflix.rxjava:rxjava-core:0.20.4" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: io.reactivex:rxjava:1.0.0-rc.7" level="project" />
   </component>
 </module>

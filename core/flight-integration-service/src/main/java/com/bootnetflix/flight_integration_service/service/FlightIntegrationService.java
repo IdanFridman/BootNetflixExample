@@ -1,6 +1,5 @@
 package com.bootnetflix.flight_integration_service.service;
 import com.bootnetflix.flight_integration_service.registry.RegistryService;
-import com.google.inject.Inject;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,10 +22,10 @@ public class FlightIntegrationService {
     private static final Logger LOG = LoggerFactory.getLogger(FlightIntegrationService.class);
     private RestTemplate restTemplate = new RestTemplate();
 
-    @Inject
+    @Autowired
     FlightBookingIntegrationService flightBookingIntegrationService;
 
-    @Inject
+    @Autowired
     CouponIntegrationService couponIntegrationService;
 
     @Autowired
@@ -67,6 +66,7 @@ public class FlightIntegrationService {
 
     public DeferredResult<FlightDetails> getAllFlightDetails() {
 
+
         //Calling previous defined functions
         Observable<String> availableFlightBookings=flightBookingIntegrationService.getAvailableFlightBookings();
         Observable<String> couponId=couponIntegrationService.getCoupon();
@@ -74,9 +74,9 @@ public class FlightIntegrationService {
 
         DeferredResult<FlightDetails> result = new DeferredResult();
 
-        Observable.zip(availableFlightBookings,couponId, (avaliable, coupon) -> {
+        Observable.zip(availableFlightBookings,couponId, (coupon, available) -> {
             // do some logic here or just..
-            return new FlightDetails(avaliable,coupon);
+            return new FlightDetails(coupon,available);
         }).subscribe(result::setResult,result::setErrorResult);
         return result;
 

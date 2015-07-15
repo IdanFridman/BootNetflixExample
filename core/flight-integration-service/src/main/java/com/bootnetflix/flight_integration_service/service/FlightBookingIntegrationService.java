@@ -8,11 +8,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 import rx.Observable;
 
+import javax.inject.Named;
 import java.net.URI;
 
 /**
  * Created by Ext_IdanF on 12/07/2015.
  */
+@Named
 public class FlightBookingIntegrationService {
 
     @Autowired
