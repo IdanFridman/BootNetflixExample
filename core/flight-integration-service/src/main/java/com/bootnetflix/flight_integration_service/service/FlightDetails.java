@@ -8,7 +8,7 @@ public class FlightDetails {
     String couponId;
     String availableFlightList;
 
-    public FlightDetails(String avaliable, String coupon) {
+    public FlightDetails(String avaliable,String coupon) {
         this.availableFlightList = avaliable;
         this.couponId = coupon;
     }

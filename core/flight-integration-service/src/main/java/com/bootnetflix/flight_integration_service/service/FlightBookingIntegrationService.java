@@ -31,7 +31,7 @@ public class FlightBookingIntegrationService {
                 URI uri = registryService.getServiceUrl("flight-booking-service", "http://localhost:8081/flight-booking-service");
                 String url = uri.toString() + "/flights/list";
                 ResponseEntity<String> resultStr = restTemplate.getForEntity(url, String.class);
-                return resultStr.getBody();
+                return (String)resultStr.getBody();
             }
         };
     }
