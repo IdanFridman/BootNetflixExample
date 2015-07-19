@@ -31,7 +31,7 @@ public class CouponIntegrationService {
                 URI uri = registryService.getServiceUrl("coupon-service", "http://localhost:8081/coupon-service");
                 String url = uri.toString() + "/coupon/generate";
                 ResponseEntity<String> resultStr = restTemplate.getForEntity(url, String.class);
-                return (String)resultStr.getBody();
+                return resultStr.getBody();
             }
         };
     }
