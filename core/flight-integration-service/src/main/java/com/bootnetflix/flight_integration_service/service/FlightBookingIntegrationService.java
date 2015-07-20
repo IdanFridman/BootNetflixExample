@@ -2,6 +2,7 @@ package com.bootnetflix.flight_integration_service.service;
 
 import com.bootnetflix.flight_integration_service.registry.RegistryService;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import com.netflix.hystrix.contrib.javanica.command.ObservableResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -23,7 +24,7 @@ public class FlightBookingIntegrationService {
     @Autowired
     RestTemplate restTemplate;
 
-    @HystrixCommand()
+    @HystrixCommand(commandProperties={@HystrixProperty(name="hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds", value = "5000")})
     public Observable<String> getAvailableFlightBookings() {
         return new ObservableResult<String>() {
             @Override
