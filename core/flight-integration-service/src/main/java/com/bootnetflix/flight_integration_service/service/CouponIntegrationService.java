@@ -24,7 +24,7 @@ public class CouponIntegrationService {
     @Autowired
     RestTemplate restTemplate;
 
-    @HystrixCommand(commandProperties={@HystrixProperty(name="hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds", value = "5000")})
+    @HystrixCommand(commandProperties={@HystrixProperty(name="hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds", value = "10000")})
     public Observable<String> getCoupon() {
         return new ObservableResult<String>() {
             @Override
