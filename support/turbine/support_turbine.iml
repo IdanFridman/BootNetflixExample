@@ -158,6 +158,6 @@
     <orderEntry type="library" exported="" name="Gradle: ch.qos.logback:logback-core:1.1.2" level="project" />
     <orderEntry type="library" exported="" name="Gradle: org.slf4j:slf4j-api:1.7.10" level="project" />
     <orderEntry type="library" exported="" name="Gradle: org.apache.httpcomponents:httpcore:4.2.1" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: io.reactivex:rxjava:1.0.12" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: io.reactivex:rxjava:1.0.13" level="project" />
   </component>
 </module>

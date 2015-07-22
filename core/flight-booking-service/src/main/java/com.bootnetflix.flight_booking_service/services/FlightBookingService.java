@@ -1,5 +1,6 @@
 package com.bootnetflix.flight_booking_service.services;
 
+import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -10,6 +11,7 @@ import java.util.List;
  * Created by idan on 5/18/15.
  */
 @RestController
+@FeignClient("bookings")
 public class FlightBookingService {
 
     @RequestMapping("/flights/list")
@@ -20,9 +22,8 @@ public class FlightBookingService {
     }
 
     @RequestMapping("flights/book")
-    public String addNewFile()
+    public String addNewBooking()
     {
         return "success";
     }
-
 }

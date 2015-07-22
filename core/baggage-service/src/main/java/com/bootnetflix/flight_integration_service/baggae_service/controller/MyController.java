@@ -1,6 +1,6 @@
 package com.bootnetflix.flight_integration_service.baggae_service.controller;
 
-import com.bootnetflix.flight_integration_service.baggae_service.services.BroConsumerService;
+import com.bootnetflix.flight_integration_service.baggae_service.services.BaggageServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -18,12 +18,12 @@ import java.util.concurrent.Future;
 public class MyController {
 
     @Autowired
-    BroConsumerService broConsumerService;
+    BaggageServiceImpl baggageServiceImpl;
 
     @RequestMapping("/executeBro")
     public String executeBro(@RequestParam(value = "name", required = false) String name) {
 
-        String result = broConsumerService.getRemoteBro(name);
+        String result = baggageServiceImpl.getRemoteBro(name);
         System.out.println("result=" + result);
         return result;
 
@@ -31,7 +31,7 @@ public class MyController {
 
     @RequestMapping("/executeFutureBro")
     public String executeFutureBro(@RequestParam(value = "name", required = false) String name) throws ExecutionException, InterruptedException {
-        Future<String> result = broConsumerService.runFutureBro(name);
+        Future<String> result = baggageServiceImpl.runFutureBro(name);
         String myResut = result.get();
         return myResut;
 
@@ -43,14 +43,14 @@ public class MyController {
     public String executeObservableBro(@RequestParam(value = "name", required = false) String name) throws ExecutionException, InterruptedException {
 
 
-        broConsumerService.executeObservableBro(name).toBlocking().first();
+        baggageServiceImpl.executeObservableBro(name).toBlocking().first();
         return null;
     }
 
     @RequestMapping("/startObserving")
     public void startObserving() {
 
-        broConsumerService.executeObservableBro("idan").subscribe(new Observer<String>() {
+        baggageServiceImpl.executeObservableBro("idan").subscribe(new Observer<String>() {
 
             @Override
             public void onCompleted() {

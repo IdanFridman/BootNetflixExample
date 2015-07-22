@@ -1,4 +1,5 @@
 package com.bootnetflix.flight_integration_service.service;
+
 import com.bootnetflix.flight_integration_service.registry.RegistryService;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.slf4j.Logger;
@@ -68,18 +69,29 @@ public class FlightIntegrationService {
 
 
         //Calling previous defined functions
-        Observable<String> availableFlightBookings=flightBookingIntegrationService.getAvailableFlightBookings();
-        Observable<String> couponId=couponIntegrationService.getCoupon();
+        Observable<String> availableFlightBookings = flightBookingIntegrationService.getAvailableFlightBookings();
+        Observable<String> couponId = couponIntegrationService.getCoupon();
 
 
         DeferredResult<FlightDetails> result = new DeferredResult();
 
-        Observable.zip(availableFlightBookings,couponId, (coupon, available) -> {
+        Observable.zip(availableFlightBookings, couponId, (coupon, available) -> {
             // do some logic here or just..
-            return new FlightDetails(coupon,available);
-        }).subscribe(result::setResult,result::setErrorResult);
+            return new FlightDetails(coupon, available);
+        }).subscribe(result::setResult, result::setErrorResult);
         return result;
 
     }
 
+    public String getBaggageListById(String id) {
+        URI uri = registryService.getServiceUrl("baggage-service", "http://localhost:8081/baggage-service");
+        String url = uri.toString() + "/baggage/list/" + id;
+        LOG.info("GetBaggageList from URL: {}", url);
+
+        ResponseEntity<String> resultStr = restTemplate.getForEntity(url, String.class);
+        LOG.info("GetProduct http-status: {}", resultStr.getStatusCode());
+        LOG.info("GetProduct body: {}", resultStr.getBody());
+        return resultStr.getBody();
+
+    }
 }

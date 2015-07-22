@@ -6,13 +6,15 @@ import com.netflix.hystrix.contrib.javanica.command.ObservableResult;
 import rx.Observable;
 
 import javax.inject.Named;
+import java.util.Arrays;
+import java.util.List;
 import java.util.concurrent.Future;
 
 /**
  * Created by idan on 5/18/15.
  */
 @Named
-public class BroConsumerService {
+public class BaggageServiceImpl implements BaggageService{
 
 
 
@@ -58,4 +60,8 @@ public class BroConsumerService {
         return "String hello" + name + ", broService is down, Till we work it out check our stubbed bro";
     }
 
+    @Override
+    public List<String> getBaggageListByFlightId(String flightId) {
+        return Arrays.asList("2,3,4");
+    }
 }
