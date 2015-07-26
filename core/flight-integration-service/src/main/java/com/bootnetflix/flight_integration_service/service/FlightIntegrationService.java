@@ -85,7 +85,7 @@ public class FlightIntegrationService {
 
     public String getBaggageListById(String id) {
         URI uri = registryService.getServiceUrl("baggage-service", "http://localhost:8081/baggage-service");
-        String url = uri.toString() + "/baggage/list/" + id;
+        String url = uri.toString();// + "/baggage/list/" + id;
         LOG.info("GetBaggageList from URL: {}", url);
 
         ResponseEntity<String> resultStr = restTemplate.getForEntity(url, String.class);

@@ -20,6 +20,12 @@ public class MyController {
     @Autowired
     BaggageServiceImpl baggageServiceImpl;
 
+    @RequestMapping("/ee")
+    public void executeBro() {
+        System.out.println("result=" + result);
+
+    }
+
     @RequestMapping("/executeBro")
     public String executeBro(@RequestParam(value = "name", required = false) String name) {
 
