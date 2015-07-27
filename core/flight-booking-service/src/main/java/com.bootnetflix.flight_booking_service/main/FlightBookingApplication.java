@@ -9,10 +9,11 @@ import org.springframework.context.annotation.ComponentScan;
 /**
  * Created by idan on 5/18/15.
  */
-@SpringBootApplication //annotation is equivalent to using @Configuration, @EnableAutoConfiguration and @ComponentScan
+@SpringBootApplication
 @ComponentScan("com.bootnetflix")
 @EnableDiscoveryClient
 public class FlightBookingApplication {
+
 
     public static void main(String[] args) {
         new SpringApplicationBuilder(FlightBookingApplication.class).run(args);

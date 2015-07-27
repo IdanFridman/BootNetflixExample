@@ -12,7 +12,7 @@ import java.util.concurrent.Future;
  * Created by idan on 5/18/15.
  */
 @Named
-public class BroConsumerService {
+public class BaggageServiceImpl{
 
 
 
@@ -58,4 +58,8 @@ public class BroConsumerService {
         return "String hello" + name + ", broService is down, Till we work it out check our stubbed bro";
     }
 
+   /* @Override
+    public List<String> getBaggageListByFlightId() {
+        return Arrays.asList("2,3,4");
+    }*/
 }

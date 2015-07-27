@@ -26,7 +26,7 @@ publishing {
     publications {
         mavenJava(MavenPublication) {
             // TODO: Where to place these properties?
-            groupId 'com.bootnetflix.baggage-service'
+            groupId 'com.bootnetflix'
             artifactId 'baggage-service'
             version '0.0.1-SNAPSHOT'
 
@@ -56,6 +56,8 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-actuator:${springBootVersion}")
     compile("org.springframework.cloud:spring-cloud-starter-hystrix:1.0.0.RELEASE")
     compile("org.springframework.cloud:spring-cloud-starter-eureka:1.0.0.RELEASE")
+    compile('org.springframework.cloud:spring-cloud-starter-feign:1.0.3.RELEASE')
+
     testCompile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
 }
 
