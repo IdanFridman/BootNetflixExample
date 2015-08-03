@@ -41,6 +41,11 @@ public class FlightController {
         return flightIntegrationService.getBaggageListById(id);
     }
 
+//    @RequestMapping("/flights/baggage/list/{id}")
+//    public List<String> getBaggageListByFlightId(@PathVariable("id") String id) {
+//        return flightIntegrationService.getBaggageListByIdWithFeign(id);
+//    }
+
 
 
 }
