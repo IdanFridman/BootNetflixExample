@@ -14,7 +14,7 @@ import org.springframework.context.annotation.ComponentScan;
 @EnableCircuitBreaker
 @EnableDiscoveryClient
 @ComponentScan("com.bootnetflix")
-@EnableFeignClients
+@EnableFeignClients(basePackages = {"com.bootnetflix"})
 public class FlightIntegrationApplication {
 
 

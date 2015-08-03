@@ -2,12 +2,15 @@ package com.bootnetflix.flight_integration_service.baggae_service.controller;
 
 import com.bootnetflix.flight_integration_service.baggae_service.services.BaggageServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import rx.Observable;
 import rx.Observer;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
@@ -15,15 +18,15 @@ import java.util.concurrent.Future;
  * Created by idan on 5/18/15.
  */
 @RestController
-public class MyController {
+public class BaggageServiceController {
 
     @Autowired
     BaggageServiceImpl baggageServiceImpl;
 
-    @RequestMapping("/ee")
-    public void executeBro() {
-        System.out.println("result=" + result);
 
+    @RequestMapping("/baggage/list/{flightId}")
+    public List<String> getBaggageListByFlightId(@PathVariable String flightId) {
+        return Arrays.asList("2,3,4");
     }
 
     @RequestMapping("/executeBro")

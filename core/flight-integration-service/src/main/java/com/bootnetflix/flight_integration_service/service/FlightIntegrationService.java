@@ -32,6 +32,10 @@ public class FlightIntegrationService {
     @Autowired
     RegistryService registryService;
 
+    //demo-6
+    @Autowired
+    BaggageService baggageService;
+
 
     @HystrixCommand(fallbackMethod = "defaultFlightList")
     public String getFlightList() {
@@ -76,7 +80,7 @@ public class FlightIntegrationService {
         DeferredResult<FlightDetails> result = new DeferredResult();
 
         Observable.zip(availableFlightBookings, couponId, (coupon, available) -> {
-            // do some logic here or just..
+            // do some logic here..
             return new FlightDetails(coupon, available);
         }).subscribe(result::setResult, result::setErrorResult);
         return result;

@@ -13,6 +13,7 @@ public class CouponService {
     @HystrixCommand(fallbackMethod = "defaultGenerateNewCoupon")
     public String generateNewCoupon()
     {
+        //assume this service can call a rest service
         System.out.println("generated New Coupon");
         return java.util.UUID.randomUUID().toString();
     }
