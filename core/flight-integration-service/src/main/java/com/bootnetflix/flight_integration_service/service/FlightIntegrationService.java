@@ -13,6 +13,7 @@ import rx.Observable;
 import javax.inject.Named;
 import java.net.URI;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created by Ext_IdanF on 26/05/2015.
@@ -87,6 +88,7 @@ public class FlightIntegrationService {
 
     }
 
+
     public String getBaggageListById(String id) {
         URI uri = registryService.getServiceUrl("baggage-service", "http://localhost:8081/baggage-service");
         String url = uri.toString();// + "/baggage/list/" + id;
@@ -97,5 +99,9 @@ public class FlightIntegrationService {
         LOG.info("GetProduct body: {}", resultStr.getBody());
         return resultStr.getBody();
 
+    }
+
+    public List<String> getBaggageListByIdWithFeign(String id) {
+        return baggageService.getBaggageListByFlightId(id);
     }
 }
