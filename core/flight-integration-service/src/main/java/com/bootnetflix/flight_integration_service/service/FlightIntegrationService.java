@@ -78,6 +78,8 @@ public class FlightIntegrationService {
         Observable<String> couponId = couponIntegrationService.getCoupon();
 
 
+
+
         DeferredResult<FlightDetails> result = new DeferredResult();
 
         Observable.zip(availableFlightBookings, couponId, (coupon, available) -> {
